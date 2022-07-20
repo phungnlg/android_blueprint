@@ -1,6 +1,5 @@
 package ago.droid.blueprint.core.di
 
-import ago.droid.blueprint.data.datasources.DCardDataSource
 import ago.droid.blueprint.data.remote.WebApi
 import dagger.Module
 import dagger.Provides
@@ -47,7 +46,7 @@ class RetrofitModule {
 
     @Singleton
     @Provides
-    fun provideInterceptors(dCardDataSource: DCardDataSource): ArrayList<Interceptor> {
+    fun provideInterceptors(): ArrayList<Interceptor> {
         val interceptors = arrayListOf<Interceptor>()
         val loggingInterceptor = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
